@@ -15,6 +15,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^3.11.0",
+    "stripe": "^8.125.0",
     "theme-ui": "^0.3.4",
     "use-shopping-cart": "^2.2.0"
   }
