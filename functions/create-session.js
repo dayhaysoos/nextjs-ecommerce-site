@@ -1,6 +1,5 @@
 const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
 
-console.log("wut", process.env.STRIPE_API_SECRET);
 const validateCartItems = require("use-shopping-cart/src/serverUtil")
   .validateCartItems;
 
@@ -13,6 +12,7 @@ exports.handler = async (event) => {
     const line_items = validateCartItems(inventory, productJSON);
 
     const session = await stripe.checkout.sessions.create({
+      mode: "payment",
       payment_method_types: ["card"],
       billing_address_collection: "auto",
       shipping_address_collection: {

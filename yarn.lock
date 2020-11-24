@@ -4453,12 +4453,13 @@ use-callback-ref@^1.2.1, use-callback-ref@^1.2.3:
   resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.4.tgz#d86d1577bfd0b955b6e04aaf5971025f406bea3c"
   integrity sha512-rXpsyvOnqdScyied4Uglsp14qzag1JIemLeTWGKbwpotWht57hbP78aNT+Q4wdFKQfQibbUX4fb6Qb4y11aVOQ==
 
-use-shopping-cart@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-2.2.0.tgz#aee9be0cc26a25f0668fd224328bd525386e315e"
-  integrity sha512-/3CeEVdGPZuVaKO3zMzwTykmaOpk0tVa8AqLS4O2RDLn7PTDkzThqil+hDJySI4lnUjjcwQso2O8dBOYIaSqMg==
+use-shopping-cart@^2.3.0-beta.0:
+  version "2.3.0-beta.0"
+  resolved "https://registry.yarnpkg.com/use-shopping-cart/-/use-shopping-cart-2.3.0-beta.0.tgz#df83db36a01887cf4e8f091e3623d15664af11e0"
+  integrity sha512-lt+iRhNngb8JeC5lXq2flPFajE8uLig6/sLhAnCOYW58YKJ97jaa3sJgWOAFV5/3oINNsNVp/9oLmXQA+H1bvg==
   dependencies:
     react-storage-hooks "^4.0.0"
+    uuid "^8.3.1"
 
 use-sidecar@^1.0.1:
   version "1.0.3"
@@ -4498,6 +4499,11 @@ util@^0.11.0:
   integrity sha512-HShAsny+zS2TZfaXxD9tYj4HQGlBezXZMZuM/S5PKLLoZkShZiGk9o5CzukI1LVHZvjdvZ2Sj1aW/Ndn2NB/HQ==
   dependencies:
     inherits "2.0.3"
+
+uuid@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
+  integrity sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
 
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"
