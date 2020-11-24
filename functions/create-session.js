@@ -1,14 +1,16 @@
-const stripe = require("stripe")(process.env.STRIPE_API_SECRET)
+const stripe = require("stripe")(process.env.STRIPE_API_SECRET);
+
+console.log("wut", process.env.STRIPE_API_SECRET);
 const validateCartItems = require("use-shopping-cart/src/serverUtil")
-  .validateCartItems
+  .validateCartItems;
 
-const inventory = require("../data/products.json")
+const inventory = require("../data/products.json");
 
-exports.handler = async event => {
+exports.handler = async (event) => {
   try {
-    const productJSON = JSON.parse(event.body)
+    const productJSON = JSON.parse(event.body);
 
-    const line_items = validateCartItems(inventory, productJSON)
+    const line_items = validateCartItems(inventory, productJSON);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -19,13 +21,13 @@ exports.handler = async event => {
       success_url: `${process.env.URL}/success.html`,
       cancel_url: process.env.URL,
       line_items,
-    })
+    });
 
     return {
       statusCode: 200,
       body: JSON.stringify({ sessionId: session.id }),
-    }
+    };
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};

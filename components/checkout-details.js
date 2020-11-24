@@ -35,20 +35,22 @@ function CheckoutDetails() {
     <Box as="form">
       <Box sx={{ marginBottom: "24px" }} as="table">
         <caption className={`visually-hidden`}>Shopping Cart</caption>
-        <Box as="tr">
-          <Box as="th" scope="col">
-            Name
+        <thead>
+          <Box as="tr">
+            <Box as="th" scope="col">
+              Name
+            </Box>
+            <Box as="th" scope="col">
+              Description
+            </Box>
+            <Box as="th" scope="col">
+              Total
+            </Box>
+            <Box as="th" scope="col">
+              Quantity
+            </Box>
           </Box>
-          <Box as="th" scope="col">
-            Description
-          </Box>
-          <Box as="th" scope="col">
-            Total
-          </Box>
-          <Box as="th" scope="col">
-            Quantity
-          </Box>
-        </Box>
+        </thead>
         <tbody>
           {Object.keys(cartDetails).map((cartItem) => {
             const item = cartDetails[cartItem];
@@ -71,7 +73,10 @@ function CheckoutDetails() {
                   <Close
                     aria-label={`Remove ${item.name} from cart`}
                     title={"Remove"}
-                    onClick={() => removeItem(item.sku)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      removeItem(item.sku);
+                    }}
                   />
                 </Box>
               </Box>

@@ -1,14 +1,19 @@
-import React from "react"
-import { FaShoppingCart } from "react-icons/fa"
-import { Button, Flex } from "theme-ui"
-import { useShoppingCart } from "use-shopping-cart"
+import React, { useEffect, useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import { Button, Flex } from "theme-ui";
+import { useShoppingCart } from "use-shopping-cart";
 
 function ShoppingCartIcon() {
-  const { cartCount, handleCartClick } = useShoppingCart()
+  const { cartCount, handleCartClick } = useShoppingCart();
+  const [count, setCount] = useState();
+  useEffect(() => {
+    setCount(cartCount);
+  });
 
-  const cartCountDescription = cartCount === 1 ?
-    'There is 1 item in your cart' :
-    `There are ${cartCount} items in your cart`;
+  const countDescription =
+    count === 1
+      ? "There is 1 item in your cart"
+      : `There are ${count} items in your cart`;
 
   return (
     <Button
@@ -26,10 +31,10 @@ function ShoppingCartIcon() {
       }}
     >
       <FaShoppingCart size={30} />
-      {cartCount === 0 ? null : (
+      {count === 0 ? null : (
         <Flex
           as="span"
-          style={{
+          sx={{
             flexDirection: "column",
             position: "relative",
             bottom: "16px",
@@ -42,17 +47,14 @@ function ShoppingCartIcon() {
             backgroundColor: "gray",
           }}
         >
-          {cartCount}
+          {count}
         </Flex>
       )}
-      <span
-        id="cart-count-description"
-        className="visually-hidden"
-      >
-        {cartCountDescription}
+      <span id="cart-count-description" className="visually-hidden">
+        {countDescription}
       </span>
     </Button>
-  )
+  );
 }
 
-export default ShoppingCartIcon
+export default ShoppingCartIcon;

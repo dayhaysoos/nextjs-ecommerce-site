@@ -21,12 +21,12 @@ const Header = ({ siteTitle }) => (
         justifyContent: "space-evenly",
       }}
     >
-      <NavLink href={"/"} as={Link}>
-        Home
-      </NavLink>
-      <NavLink href={"/products"} as={Link}>
-        Products
-      </NavLink>
+      <Link href={"/"}>
+        <NavLink as={"a"}>Home</NavLink>
+      </Link>
+      <Link href={"/products"}>
+        <NavLink as={"a"}>Products</NavLink>
+      </Link>
       <ShoppingCartIcon />
     </Flex>
   </Box>

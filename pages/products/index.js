@@ -24,28 +24,30 @@ export default function Products({ products }) {
           return (
             <Box key={product.name}>
               <Link href={`/products/${product.slug}`}>
-                <Flex
-                  sx={{
-                    paddingTop: "24px",
-                    paddingBottom: "24px",
-                    flexDirection: "column",
-                    color: "primary",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    fontWeight: "700",
-                    textDecoration: "none",
-                  }}
-                >
-                  <Image src={product.image} />
-                  <Box as="p">{product.name}</Box>
-                  <Box as="p">
-                    {formatCurrencyString({
-                      value: product.price,
-                      currency: "USD",
-                    })}
-                  </Box>
-                  <Box as="p">{product.description}</Box>
-                </Flex>
+                <a>
+                  <Flex
+                    sx={{
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      flexDirection: "column",
+                      color: "primary",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontWeight: "700",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <Image src={product.image} />
+                    <Box as="p">{product.name}</Box>
+                    <Box as="p">
+                      {formatCurrencyString({
+                        value: product.price,
+                        currency: "USD",
+                      })}
+                    </Box>
+                    <Box as="p">{product.description}</Box>
+                  </Flex>
+                </a>
               </Link>
 
               <Flex sx={{ justifyContent: "center" }}>
