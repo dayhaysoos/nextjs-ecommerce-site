@@ -2,7 +2,7 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    primary: "teal",
+    primary: "coral",
     modes: {
       dark: {
         text: "#fff",
