@@ -7,7 +7,7 @@ export default {
       dark: {
         text: "#fff",
         background: "#000",
-        primary: "teal",
+        primary: "coral",
       },
     },
   },
