@@ -5,7 +5,7 @@ function Contact() {
   return (
     <Layout>
       <h2>Have questions about fruits?</h2>
-      <form name="contact" netlify>
+      <form name="contact" data-netlify="true">
         <label>Name</label>
         <p>
           <input type="text" name="name" />
