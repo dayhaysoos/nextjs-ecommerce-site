@@ -8,7 +8,6 @@ import { IdentityContext } from "../context/identity-context";
 const Header = () => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext);
 
-  console.log(useContext(IdentityContext));
   return (
     <Box
       as="header"
