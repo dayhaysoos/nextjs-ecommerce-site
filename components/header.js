@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Flex, Box } from "theme-ui";
 import Link from "next/link";
 import PropTypes from "prop-types";
-// import ShoppingCartIcon
+import ShoppingCartIcon from "../components/shopping-cart-icon";
 
 const Header = () => (
   <Box
@@ -27,7 +27,7 @@ const Header = () => (
       <Link href={"/products"}>
         <NavLink as={"a"}>Products</NavLink>
       </Link>
-      {/* Add <ShoppingCartIcon /> */}
+      <ShoppingCartIcon />
     </Flex>
   </Box>
 );

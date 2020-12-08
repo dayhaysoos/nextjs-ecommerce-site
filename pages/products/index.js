@@ -16,6 +16,53 @@ export async function getStaticProps() {
 }
 
 export default function Products({ products }) {
-  // render products
-  return <h1>Products Page</h1>;
+  const { addItem } = useShoppingCart();
+  return (
+    <Layout>
+      <Grid columns={4}>
+        {products.map((product) => {
+          return (
+            <Box key={product.name}>
+              <Link href={`/products/${product.slug}`}>
+                <a>
+                  <Flex
+                    sx={{
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      flexDirection: "column",
+                      color: "primary",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontWeight: "700",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <Image src={product.image} />
+                    <Box as="p">{product.name}</Box>
+                    <Box as="p">
+                      {formatCurrencyString({
+                        value: product.price,
+                        currency: "USD",
+                      })}
+                    </Box>
+                    <Box as="p">{product.description}</Box>
+                  </Flex>
+                </a>
+              </Link>
+
+              <Flex sx={{ justifyContent: "center" }}>
+                <Button
+                  onClick={() => addItem(product)}
+                  sx={{ backgroundColor: "teal" }}
+                  alt={`Add ${product.name} to cart`}
+                >
+                  Add to Cart
+                </Button>
+              </Flex>
+            </Box>
+          );
+        })}
+      </Grid>
+    </Layout>
+  );
 }

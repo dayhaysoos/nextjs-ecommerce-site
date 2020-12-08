@@ -1,10 +1,12 @@
 import React from "react";
 import Header from "./header";
+import SkipLink from "./skip-link";
+import CheckoutModal from "./checkout-modal";
 
 const Layout = ({ children }) => {
   return (
     <>
-      {/* Add <SkipLink /> */}
+      <SkipLink />
       <Header />
       <div
         style={{
@@ -24,7 +26,7 @@ const Layout = ({ children }) => {
           <a href="https://www.nextjs.org">Next.js</a>
         </footer>
       </div>
-      {/* Add <CheckoutModal /> */}
+      <CheckoutModal />
     </>
   );
 };

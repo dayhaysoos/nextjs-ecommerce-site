@@ -1,23 +1,23 @@
-import React from 'react'
+import React from "react";
 
 function SkipLink() {
   return (
     <a
-      href="#main"
+      href="main"
       style={{
-        position: 'absolute',
-        backgroundColor: 'white',
+        position: "absolute",
+        backgroundColor: "white",
         height: 50,
-        width: '200px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        width: "200px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
       className="visually-hidden"
     >
       Skip to Content
     </a>
-  )
+  );
 }
 
-export default SkipLink
+export default SkipLink;
