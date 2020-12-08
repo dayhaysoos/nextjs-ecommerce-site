@@ -5,16 +5,16 @@ function Contact() {
   return (
     <Layout>
       <h2>Have questions about fruits?</h2>
-      <form method="POST" name="contact" data-netlify="true">
-        <label>Name</label>
+      <form method="POST" name="contact-form" data-netlify="true">
+        <label name="name">Name</label>
         <p>
           <input type="text" name="name" />
         </p>
-        <label>Email</label>
+        <label name="email">Email</label>
         <p>
           <input type="email" name="email" />
         </p>
-        <label>Message</label>
+        <label name="message">Message</label>
         <p>
           <textarea name="message"></textarea>
         </p>
