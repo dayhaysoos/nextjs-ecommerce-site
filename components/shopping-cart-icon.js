@@ -17,7 +17,10 @@ function ShoppingCartIcon() {
 
   return (
     <Button
-      onClick={handleCartClick}
+      onClick={(e) => {
+        e.preventDefault();
+        handleCartClick();
+      }}
       aria-label="Checkout"
       aria-describedby="cart-count-description"
       sx={{

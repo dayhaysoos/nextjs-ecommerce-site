@@ -85,7 +85,14 @@ function CheckoutDetails() {
         </tbody>
       </Box>
       <Flex sx={{ justifyContent: "space-evenly", alignItems: "center" }}>
-        <Button onClick={handleCartClick}>Close</Button>
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            handleCartClick();
+          }}
+        >
+          Close
+        </Button>
         <Button onClick={handleSubmit}>Checkout</Button>
       </Flex>
     </Box>

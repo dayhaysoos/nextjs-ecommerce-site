@@ -7,7 +7,10 @@ import "@reach/dialog/styles.css";
 function CheckoutModal() {
   const { shouldDisplayCart, handleCloseCart, cartCount } = useShoppingCart();
   return (
-    <DialogOverlay onDismiss={handleCloseCart} isOpen={shouldDisplayCart}>
+    <DialogOverlay
+      onDismiss={() => handleCloseCart()}
+      isOpen={shouldDisplayCart}
+    >
       <DialogContent
         aria-label={"Cart Count"}
         sx={{ backgroundColor: "background", width: ["100vw", "90vw"] }}
